@@ -1,8 +1,9 @@
 import streamlit as st
 import pandas as pd
-import joblib
+import cloudpickle
+with open("best_model.pkl", "rb") as f:
+    model = cloudpickle.load(f)
 
-model = joblib.load("best_model.pkl")
 
 st.set_page_config(page_title="Employee Salary Classification", page_icon="💼", layout="centered")
 
